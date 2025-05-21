@@ -37,7 +37,7 @@ public class CursoController
         return ResponseEntity.status(HttpStatus.CREATED).body(cnuevo);
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
     public ResponseEntity<Curso> buscar (@PathVariable Integer id)
     {
         try

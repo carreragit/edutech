@@ -1,7 +1,7 @@
-package com.cursos.Cursos.auth.repository;
+package com.auth.repository;
 
 
-import com.cursos.Cursos.auth.model.Usuario;
+import com.auth.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

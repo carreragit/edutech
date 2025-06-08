@@ -1,6 +1,6 @@
-package com.cursos.Cursos.soporte.repository;
+package com.soporte1.repository;
 
-import com.cursos.Cursos.soporte.model.Incidencia;
+import com.soporte1.model.Incidencia;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

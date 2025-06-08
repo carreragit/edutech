@@ -1,8 +1,8 @@
-package com.cursos.Cursos.soporte.controller;
+package com.soporte1.controller;
 
-import com.cursos.Cursos.model.Curso;
-import com.cursos.Cursos.soporte.model.Incidencia;
-import com.cursos.Cursos.soporte.service.IncidenciaService;
+
+import com.soporte1.model.Incidencia;
+import com.soporte1.service.IncidenciaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

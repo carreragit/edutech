@@ -1,4 +1,4 @@
-package com.cursos.Cursos.auth.Dto;
+package com.auth.Dto;
 
 
 //Es una clase simple que usamos para recibir o enviar datos entre el cliente

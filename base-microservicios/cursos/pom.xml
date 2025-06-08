@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.ejemplo</groupId>
+        <groupId>com.micro</groupId>
         <artifactId>microservices-root</artifactId>
         <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath> <!-- Ruta al pom del proyecto padre -->

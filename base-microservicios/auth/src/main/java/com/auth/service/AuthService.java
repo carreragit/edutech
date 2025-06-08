@@ -1,9 +1,9 @@
-package com.cursos.Cursos.auth.service;
+package com.auth.service;
 
 
-import com.cursos.Cursos.auth.Dto.LoginRequest;
-import com.cursos.Cursos.auth.model.Usuario;
-import com.cursos.Cursos.auth.repository.UsuarioRepository;
+import com.auth.Dto.LoginRequest;
+import com.auth.model.Usuario;
+import com.auth.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

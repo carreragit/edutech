@@ -1,13 +1,12 @@
-package com.cursos.Cursos.soporte.service;
+package com.soporte1.service;
 
-import com.cursos.Cursos.soporte.model.Incidencia;
-import com.cursos.Cursos.soporte.repository.IncidenciaRepository;
+import com.soporte1.model.Incidencia;
+import com.soporte1.repository.IncidenciaRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional // Añade transacciones a nivel de clase

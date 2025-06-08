@@ -1,8 +1,8 @@
-package com.cursos.Cursos.auth.controller;
+package com.auth.controller;
 
 
-import com.cursos.Cursos.auth.Dto.LoginRequest;
-import com.cursos.Cursos.auth.service.AuthService;
+import com.auth.Dto.LoginRequest;
+import com.auth.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

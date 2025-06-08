@@ -1,4 +1,4 @@
-package com.cursos.Cursos.auth.model;
+package com.auth.model;
 
 
 import jakarta.persistence.*;

@@ -46,7 +46,8 @@ public class IncidenciaController
             Incidencia incidencia = incidenciaService.findById(id);
             return ResponseEntity.ok(incidencia);
         }
-        catch (Exception e){
+        catch (Exception e)
+        {
             return ResponseEntity.notFound().build();
         }
     }

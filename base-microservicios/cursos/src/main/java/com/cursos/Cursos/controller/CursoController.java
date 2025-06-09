@@ -38,7 +38,7 @@ public class CursoController
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Curso> buscar (@PathVariable Integer id)
+    public ResponseEntity<Curso> buscar (@PathVariable("id") Long id)
     {
         try
         {
@@ -51,7 +51,7 @@ public class CursoController
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Curso> actualizar (@PathVariable Integer id, @RequestBody Curso curso)
+    public ResponseEntity<Curso> actualizar (@PathVariable("id") Integer id, @RequestBody Curso curso)
     {
         try
         {
@@ -70,7 +70,7 @@ public class CursoController
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminar (@PathVariable Long id)
+    public ResponseEntity<?> eliminar (@PathVariable("id") Long id)
     {
         try
         {

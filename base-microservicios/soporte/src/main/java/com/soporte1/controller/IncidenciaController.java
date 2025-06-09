@@ -39,7 +39,7 @@ public class IncidenciaController
 
     // GET /api/incidencias/{id} - Buscar  incidencia por ID
     @GetMapping("/{id}")
-    public ResponseEntity<Incidencia> buscar (@PathVariable Long id)
+    public ResponseEntity<Incidencia> buscar (@PathVariable("id") Long id)
     {
         try
         {
@@ -54,7 +54,7 @@ public class IncidenciaController
 
     // PUT /api/incidencias/{id} - EDITAR o ACTUALIZAR incidencia existente
     @PutMapping("/{id}")
-    public ResponseEntity<Incidencia> actualizar (@PathVariable Long id, @RequestBody Incidencia incidencia)
+    public ResponseEntity<Incidencia> actualizar (@PathVariable("id") Long id, @RequestBody Incidencia incidencia)
     {
         try
         {
@@ -75,7 +75,7 @@ public class IncidenciaController
 
     // DELETE /api/incidencias/{id} - Eliminar una incidencia
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminar (@PathVariable Long id)
+    public ResponseEntity<?> eliminar (@PathVariable("id") Long id)
     {
         try
         {

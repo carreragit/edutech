@@ -36,7 +36,7 @@ public class UsuarioController
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Usuario> buscar(@PathVariable Integer id)
+    public ResponseEntity<Usuario> buscar(@PathVariable("id") Integer id)
     {
         try
         {
@@ -50,7 +50,7 @@ public class UsuarioController
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Usuario> actualizar(@PathVariable Integer id, @RequestBody Usuario usuario)
+    public ResponseEntity<Usuario> actualizar(@PathVariable("id") Integer id, @RequestBody Usuario usuario)
     {
         try
         {
@@ -68,7 +68,7 @@ public class UsuarioController
         }
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminar(@PathVariable Long id)
+    public ResponseEntity<?> eliminar(@PathVariable("id") Long id)
     {
         try
         {

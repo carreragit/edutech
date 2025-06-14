@@ -114,7 +114,28 @@ public class UsuarioController
 
     @PutMapping("/{id}")
     @Operation(summary = "Editar un usuario específico", description = "Permite editar los datos de un usuario de la base de datos")
-    public ResponseEntity<Usuario> actualizar(@PathVariable("id") Integer id, @RequestBody Usuario usuario)
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Usuario actualizado exitosamente",
+                    content = @Content(schema = @Schema(implementation = Usuario.class))
+            ),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Solicitud incorrecta (ID o datos inválidos)"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Usuario no encontrado"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "Error interno del servidor"
+            )
+    })
+    public ResponseEntity<Usuario> actualizar(
+            @Parameter(description = "ID del usuario que se desea actualizar", required = true)
+            @PathVariable("id") Integer id, @RequestBody Usuario usuario)
     {
         try
         {
@@ -133,7 +154,24 @@ public class UsuarioController
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminar(@PathVariable("id") Long id)
+    @Operation(summary = "Eliminar un usuario específico", description = "Permite eliminar un usuario de la base de datos")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "204",
+                    description = "Usuario eliminado exitosamente"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Usuario no encontrado"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "Error interno del servidor"
+            )
+    })
+    public ResponseEntity<?> eliminar(
+            @Parameter(description = "ID del usuario a eliminar", required = true)
+            @PathVariable("id") Long id)
     {
         try
         {

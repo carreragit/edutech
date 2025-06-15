@@ -50,6 +50,12 @@
             <version>2.6.0</version>
         </dependency>
 
+        <!-- HATEOAS  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-hateoas</artifactId>
+        </dependency>
+
         <!-- Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

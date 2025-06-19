@@ -26,4 +26,12 @@ public class UsuarioMapper {
         usuario.setNombreUsuario(dto.getNombreUsuario());
         usuario.setContrasenia(dto.getContrasenia());
     }
-}
+} /* Si tu mapper tiene un metodo updateEntity(entidad, dto), simúlalo:
+doAnswer(invocation -> {
+Usuario u = invocation.getArgument(0);
+UsuarioCrearDTO dto = invocation.getArgument(1);
+        u.setNombreUsuario(dto.getNombreUsuario());
+        u.setContrasenia(dto.getContrasenia());
+        return null;
+        }).when(usuarioMapper).updateEntity(existente, dtoEntrada);
+*/

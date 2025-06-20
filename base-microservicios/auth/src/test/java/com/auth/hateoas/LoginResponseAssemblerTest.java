@@ -14,7 +14,7 @@ class LoginResponseAssemblerTest {
 
 
     @Test
-    void toModel_loginExitoso_agregaLinkYMensajeCoorectos() { // verifica login exitoso
+    void toModel_loginExitoso_agregaLinkYMensajeCorectos() { // verifica login exitoso
         // llama a toModel con success=true
         LoginResponseDTO dto = assembler.toModel(true);
 

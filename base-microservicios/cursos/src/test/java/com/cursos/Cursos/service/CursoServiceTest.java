@@ -70,12 +70,10 @@ class CursoServiceTest {
         // Paso 3: Llamar al metodo del service
         Curso resultado = cursoService.findById(id);
 
-        // Paso 4: Verificar que los datos son correctos
         assertNotNull(resultado);
         assertEquals(id, resultado.getId());
         assertEquals(curso.getNombre(), resultado.getNombre());
 
-        // Paso 5: Verificar que se llamó al repositorio
         verify(cursoRepository, times(1)).findById(id);
     }
 
@@ -90,13 +88,11 @@ class CursoServiceTest {
         // Paso 3: Verificar que se lanza una excepción al buscar un curso inexistente
         assertThrows(NoSuchElementException.class, () -> cursoService.findById(id));
 
-        // Paso 4: Verificar que el repositorio fue llamado una vez
         verify(cursoRepository, times(1)).findById(id);
     }
 
     @Test
     void save_guardarCurso_retornaCurso() {
-        // Paso 1: Crear curso ficticio
         Curso curso = new Curso();
         curso.setId(1L);
         curso.setNombre(faker.educator().course());
@@ -107,11 +103,9 @@ class CursoServiceTest {
         // Paso 3: Ejecutar el metodo save
         Curso resultado = cursoService.save(curso);
 
-        // Paso 4: Verificar que se devuelve correctamente
         assertNotNull(resultado);
         assertEquals(1L, resultado.getId());
 
-        // Paso 5: Verificar que se llamó al repositorio
         verify(cursoRepository, times(1)).save(curso);
     }
 
@@ -126,7 +120,6 @@ class CursoServiceTest {
         // Paso 3: Llamar al metodo delete
         cursoService.delete(id);
 
-        // Paso 4: Verificar que se llamo al repositorio una vez
         verify(cursoRepository, times(1)).deleteById(id);
     }
 }

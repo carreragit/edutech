@@ -77,7 +77,7 @@ class IncidenciaMapperTest {
         assertEquals("Estado actualizado", incidencia.getEstado());
         assertEquals(300L, incidencia.getUsuarioId());
 
-        // Paso 5: Verificar que el id no se modificó
+        // Paso 5: Verificar que el id no se modifico
         assertEquals(10L, incidencia.getId());
     }
 }

@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class IncidenciaModelAssemblerTest {
 
-    // Instancia del assembler que vamos a probar
     private final IncidenciaModelAssembler assembler = new IncidenciaModelAssembler();
 
     @Test
@@ -18,7 +17,7 @@ class IncidenciaModelAssemblerTest {
         IncidenciaRespuestaDTO dto = new IncidenciaRespuestaDTO();
         dto.setId(20L);
         dto.setTitulo("Incidencia ejemplo");
-        dto.setDescripcion("Descripción ejemplo de incidencia");
+        dto.setDescripcion("Descripcion ejemplo de incidencia");
 
         // Paso 2: Ejecutar el metodo toModel para obtener el EntityModel con enlaces HATEOAS
         EntityModel<IncidenciaRespuestaDTO> model = assembler.toModel(dto);

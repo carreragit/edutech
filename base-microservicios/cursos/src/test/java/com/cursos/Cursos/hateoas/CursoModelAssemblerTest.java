@@ -20,7 +20,7 @@ class CursoModelAssemblerTest {
         dto.setNombre("Curso ejemplo");
         dto.setDescripcion("Descripción ejemplo");
 
-        // Ejecutar método a testear (generar el EntityModel)
+        // Ejecutar metodo a testear (generar el EntityModel)
         EntityModel<CursoRespuestaDTO> model = assembler.toModel(dto);
 
         // Verificar que el contenido es el DTO original

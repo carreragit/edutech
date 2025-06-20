@@ -50,7 +50,7 @@ class CursoControllerTest {
         curso.setNombre(faker.educator().course());
         curso.setDescripcion(faker.lorem().sentence());
 
-        // Paso 2: DTO que representará la respuesta esperada
+        // Paso 2: DTO que representara la respuesta esperada
         CursoRespuestaDTO dto = new CursoRespuestaDTO();
         dto.setId(curso.getId());
         dto.setNombre(curso.getNombre());
@@ -171,11 +171,11 @@ class CursoControllerTest {
         dtoEntrada.setNombre(faker.educator().course());
         dtoEntrada.setDescripcion(faker.lorem().sentence());
 
-        // Paso 2: Curso existente (simula que ya está en BD)
+        // Paso 2: Curso existente (simula que ya esta en BD)
         Curso cursoExistente = new Curso();
         cursoExistente.setId(idCurso);
         cursoExistente.setNombre("Nombre Antiguo");
-        cursoExistente.setDescripcion("Descripción antigua");
+        cursoExistente.setDescripcion("Descripcion antigua");
 
         // Paso 3: Simular comportamiento del mapper.updateEntity (sin llamar recursivamente al mock)
         doAnswer(invoc -> {

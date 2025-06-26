@@ -29,20 +29,16 @@ class UsuarioControllerTest {
     private MockMvc mockMvc; // simula llamadas HTTP al controller
 
     @MockBean //reemplaza beans reales por mocks de mockito
-    private UsuarioService service;
+    private UsuarioService usuarioService;
 
     @MockBean
-    private UsuarioMapper mapper;
+    private UsuarioMapper usuarioMapper;
 
     @MockBean
     private UsuarioAssembler usuarioAssembler;
 
     // dataFaker para datos ficticios
     private final Faker faker = new Faker();
-    @Autowired
-    private UsuarioService usuarioService;
-    @Autowired
-    private UsuarioMapper usuarioMapper;
 
     @Test
     void listarUsuarios_Status200() throws Exception {
@@ -67,7 +63,7 @@ class UsuarioControllerTest {
 
         //ejecutar GET y verificar status 200
         // 200 OK: La solicitud ha tenido éxito.
-        mockMvc.perform(get("/auth"))
+        mockMvc.perform(get("/api/v1/usuarios"))
                 .andExpect(status().isOk());
     }
     @Test
@@ -78,7 +74,7 @@ class UsuarioControllerTest {
 
         // ejecutar get, status 204
         //204 No Content: La solicitud ha tenido éxito, pero no hay contenido que enviar en la respuesta.
-        mockMvc.perform(get("/auth"))
+        mockMvc.perform(get("/api/v1/usuarios"))
                 .andExpect(status().isNoContent());
     }
 
@@ -118,7 +114,7 @@ class UsuarioControllerTest {
         // 201 Created: La solicitud ha sido cumplida y se ha creado un nuevo recurso.
         // mockMvc : es el objeto que te permite simular peticiones HTTP en tus pruebas (sin levantar un servidor real).
         // perform :  ejecuta una petición simulada al endpoint que quieras testear.
-        mockMvc.perform(post("/auth")
+        mockMvc.perform(post("/api/v1/usuarios")
                         .contentType("application/json")
                         .content(bodyJson))
                 .andExpect(status().isCreated());
@@ -150,7 +146,7 @@ class UsuarioControllerTest {
         when(usuarioAssembler.toModel(dto)).thenReturn(entityModel);
 
         //ejecutar GET/auth{id} y verificar status 200
-        mockMvc.perform(get("/auth/{id}" , idBuscado))
+        mockMvc.perform(get("/api/v1/usuarios/{id}" , idBuscado))
                 .andExpect(status().isOk());
 
     }
@@ -158,7 +154,7 @@ class UsuarioControllerTest {
     void buscarUsuarioPorId_NoEncontrado_status404() throws Exception {
         Long idNoExiste = 999L;
         when(usuarioService.findById(idNoExiste)).thenThrow(new RuntimeException("Usuario no encontrado"));
-        mockMvc.perform(get("/auth/{id}", idNoExiste))
+        mockMvc.perform(get("/api/v1/usuarios/{id}", idNoExiste))
                 .andExpect(status().isNotFound());
     }
 
@@ -211,7 +207,7 @@ class UsuarioControllerTest {
         String bodyJson = objectMapper.writeValueAsString(dtoEntrada);
 
         // Simula la llamada PUT /auth/{id} con el body en JSON y espera un status 200 OK.
-        mockMvc.perform(put("/auth/{id}", idActualizar)
+        mockMvc.perform(put("/api/v1/usuarios/{id}", idActualizar)
                 .contentType("application/json")
                 .content(bodyJson))
                 .andExpect(status().isOk());
@@ -229,7 +225,7 @@ class UsuarioControllerTest {
         doNothing().when(usuarioService).delete(idEliminar);
 
         // ejecutar DELETE y verificar status 204
-        mockMvc.perform(delete("/auth/{id}", idEliminar))
+        mockMvc.perform(delete("/api/v1/usuarios/{id}", idEliminar))
                 .andExpect(status().isNoContent());
     }
 
@@ -241,7 +237,7 @@ class UsuarioControllerTest {
         doThrow(new RuntimeException("Usuario no encontrado"))
                 .when(usuarioService).delete(idNoExiste);
 
-        mockMvc.perform(delete("/auth/{id}", idNoExiste))
+        mockMvc.perform(delete("/api/v1/usuarios/{id}", idNoExiste))
                 .andExpect(status().isNotFound());
     }
 

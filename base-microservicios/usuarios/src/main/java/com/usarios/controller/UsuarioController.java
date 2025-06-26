@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/v1/usuarios")
 @Tag(name = "Usuarios", description = "Operaciones relacionadas con los usuarios")
 public class UsuarioController {
 
